@@ -7,11 +7,11 @@
 将需要的 skill 目录复制或链接到 `~/.claude/skills/`：
 
 ```bash
-# 方式一：复制
-cp -r rd-doc-assistant ~/.claude/skills/
+# 方式一：复制所有 skills
+cp -r * ~/.claude/skills/
 
-# 方式二：符号链接（便于后续更新）
-ln -sf $(pwd)/rd-doc-assistant ~/.claude/skills/
+# 方式二：符号链接整个仓库（便于后续更新）
+ln -sfT $(pwd) ~/.claude/skills
 ```
 
 重启 Claude Code 后即可使用。
@@ -20,14 +20,20 @@ ln -sf $(pwd)/rd-doc-assistant ~/.claude/skills/
 
 ### rd-doc-assistant
 
-研发文档助手 - 中国标准研发流程的文档模板助手。
+研发文档助手 - 中国标准研发流程的文档模板助手。提供 7 个阶段、20 个文档模板的按需读取和内容填充。
 
-提供 7 个阶段、20 个文档模板的按需读取和内容填充，适用于 Web 应用、企业系统、移动应用等非嵌入式领域的研发文档编写。
+### embedded-systems
 
-- 需求调研与分析：需求文档、分析报告
-- 立项：立项报告、项目计划书、预算方案
-- 方案设计：技术方案文档、数据库设计、架构设计图
-- 开发：源代码说明、单元测试报告、集成测试报告
-- 测试与验证：测试报告、缺陷清单、验收报告
-- 部署与发布：发布版本说明、用户手册、部署文档
-- 维护与优化：优化报告、更新版本说明、维护记录
+嵌入式系统工程师 skill - 精通微控制器编程、RTOS 实现、硬件-软件集成。适用于 STM32、ESP32、FreeRTOS、裸机开发、功耗优化等场景。
+
+### skill-creator
+
+创建、修改和优化 Claude Code skills 的工具。支持从零创建 skill、编辑现有 skill、运行 eval 测试、优化 description 触发准确性。
+
+### find-skills
+
+帮助发现和安装 Claude Code agent skills。通过 `npx skills` CLI 搜索和安装社区 skills。
+
+### word-optimizer
+
+专业文本润色和优化工具。优化中文/英文表达、精简冗余内容、统一文档风格、润色邮件报告等。
